@@ -15,10 +15,8 @@ if (isset($_POST) && !empty($_POST)) {
 				echo "Log in success. redirecting to success page please wait.";
 
 				$user->setUserId($isValidUser);
-				showUserId();
-				//var_dump($isValidUser);
-				//exit();
-				//header("location: success.php");
+				
+				header("location: profile.php");
 			}
 			else {
 				throw new Exception("Invalid User details", 1);				
