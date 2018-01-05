@@ -2,7 +2,7 @@
 require_once('classes/user.php');
 
 $user = new User();
-$db = new Db();
+//$db = new Db();
 if (isset($_POST) && !empty($_POST)) {
 		$uname = $_POST['userName'];
 		$email = $_POST['email'];
@@ -15,10 +15,10 @@ if (isset($_POST) && !empty($_POST)) {
 				echo "Log in success. redirecting to success page please wait.";
 
 				$user->setUserId($isValidUser);
-				echo $user->getUserId();
+				showUserId();
 				//var_dump($isValidUser);
-				exit();
-				header("location: success.php");
+				//exit();
+				//header("location: success.php");
 			}
 			else {
 				throw new Exception("Invalid User details", 1);				
@@ -36,7 +36,7 @@ if (isset($_POST) && !empty($_POST)) {
 				//Register new user
 				$sql = "INSERT INTO `user` (`name`, `email`) VALUES ( '$uname', '$email')";
 				
-				$result = $db->insert($sql);
+				$result = $user->insert($sql);
 				if($result) {
 					var_dump("New User Created..");
 				}
@@ -59,4 +59,9 @@ else {
 	catch (Exception $e) {
 		var_dump($e);
     } 
+}
+function showUserId(){
+	$user = new User();
+	//var_dump($user);
+	echo $user->getUserId();
 }

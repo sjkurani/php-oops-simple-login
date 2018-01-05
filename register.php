@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Register</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 </head>
 <body>
-	<h1>Register</h1>
-	<form method="post" action="action.php">
-		<label>Username</label>
-		<input type="text" name="userName"><br>
-		<label>Email</label>
-		<input type="text" name="email"><br>
-		<input type="submit" name="register" value="Submit">
+	<legend><center><h1>Register Form</h1></center></legend>
+	<form method="post" action="action.php" class="well row">
+		<div class="col-lg-6">
+			<label class="col-lg-12">Username</label>
+			<input class="col-lg-12" type="text" name="userName">
+		</div>
+		<div class="col-lg-6">
+			<label class="col-lg-12">Email</label>
+			<input class="col-lg-12" type="text" name="email">
+		</div>
+		<div class="col-lg-12"><br>
+			<center><input type="submit" name="login" value="Submit" class="btn btn-info"></center>
+			<br>
+			<center><a href="index.php">Already Member? Sigin Here</a></center>
+		</div>
 	</form>
 </body>
 </html>

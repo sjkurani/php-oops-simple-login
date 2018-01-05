@@ -5,7 +5,7 @@
 require_once('db.php');
 class User extends Db
 {
-	private $userId;
+	public static $userId;
 	function __construct() {
 		parent::__construct();
 	}
